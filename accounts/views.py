@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm, CustomLoginForm
 from django.contrib import messages
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 
 def index(request):
     return render(request, 'accounts/index.html')
@@ -31,3 +31,8 @@ def login_view(request):
     form = CustomLoginForm()
     return render(request, 'accounts/login.html', {'form': form})
 
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('accounts:index')
