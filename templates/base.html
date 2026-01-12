@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Django Auth{% endblock %}</title>
+    <title>{% block title %}Django Auth Simple{% endblock %}</title>
 
     <!-- Tailwind CDN (development uchun) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,7 +16,7 @@
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
 
             <!-- Logo -->
-            <a href="{% url 'accounts:index' %}" class="text-2xl font-bold text-blue-600">
+            <a href="" class="text-2xl font-bold text-blue-600">
                 DjangoAuth
             </a>
 
@@ -28,7 +28,7 @@
                         Hi, <strong>{{ user.username }}</strong>
                     </span>
 
-                    <form method="post" action="{% url 'accounts:logout' %}">
+                    <form method="post" action="">
                         {% csrf_token %}
                         <button
                             type="submit"
@@ -39,14 +39,14 @@
                     </form>
                 {% else %}
                     <a
-                        href="{% url 'accounts:login' %}"
+                        href=""
                         class="text-gray-700 hover:text-blue-600 transition"
                     >
                         Login
                     </a>
 
                     <a
-                        href="{% url 'accounts:register' %}"
+                        href="{% url 'simple:register' %}"
                         class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
                     >
                         Register
